@@ -58,7 +58,7 @@ public abstract class AdminBaseController<T> extends SiteController {
     }
 
     @GetMapping(value = "/delete/{id}")
-    public String delete(@PathVariable("id") long id, Model model) throws InstantiationException, IllegalAccessException {
+    public String delete(@PathVariable("id") long id, Model model) {
         T source = repository.getOne(id);
         ReflectionHelper.set(source, "deleted", true);
         ReflectionHelper.set(source, "deletedDate", new Date());
