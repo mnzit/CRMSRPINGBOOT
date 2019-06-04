@@ -1,0 +1,12 @@
+<form action="/enquiry/sources" method="POST">
+    <div>
+        <label>Name </label>
+        <input type="text" name="name" th:value="${record.name}">
+    </div>
+    <div>
+        <label>Color </label>
+        <input type="text" name="color" th:value="${record.color}">
+    </div>
+    <input type="hidden" name="id" th:value="${record.id}">
+    <button type="submit">Save</button>
+</form>

@@ -1,0 +1,18 @@
+<h1><span th:text="${header}"></span></h1>
+<div><a href="/enquiry/sources/add">Add</a> </div>
+<ul>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="record : ${records}">
+            <td th:text="${record.id}"></td>
+            <td th:text="${record.name}"></td>
+            <td th:text="${record.color}" th:style="'background:'+${record.color}"></td>
+            <td><a th:href="@{'/enquiry/sources/edit/'+${record.id}}">Edit</a> || <a th:href="@{'/enquiry/sources/delete/'+${record.id}}">Delete</a></td>
+        </tr>
+    </table>
+</ul>
